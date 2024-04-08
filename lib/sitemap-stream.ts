@@ -131,12 +131,8 @@ export class SitemapStream extends Transform {
   }
 
   _flush(cb: TransformCallback): void {
-    if (!this.hasHeadOutput) {
-      cb(new EmptySitemap());
-    } else {
       this.push(closetag);
       cb();
-    }
   }
 }
 
